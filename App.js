@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
+import Posts from './src/containers/Posts';
 import postsReducer from './src/store/postsReducer';
 
 
@@ -10,10 +10,8 @@ const store = configureStore({reducer: {
 
 export default function App() {
   return (
-    <Provider store={store}>
-      <Text>
-        hello
-      </Text>
+    <Provider store={store}> 
+      <Posts/>
     </Provider>
   );
 }
