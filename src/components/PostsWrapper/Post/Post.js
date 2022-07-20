@@ -26,9 +26,10 @@ const styles = StyleSheet.create({
   img: {
     height: 100,
     width: 100,
+    flex: 1,
   },
   text : {
     marginLeft: 10,
-    flex: 1,
+    flex: 2,
   },
 })
