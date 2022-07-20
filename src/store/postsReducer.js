@@ -7,19 +7,18 @@ const initialState = {
   posts: [],
   nextPostsPage: '',
   error: null,
-  loading: false,
 }
 
 const postsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_POSTS_REQUEST: 
-      return {...state, loading: true}
+      return {...state}
     case FETCH_POSTS_SUCCESS: 
-      return {...state, loading: false, posts: action.posts, nextPostsPage: action.nextPostsPage}
+      return {...state, posts: action.posts, nextPostsPage: action.nextPostsPage}
     case FETCH_POSTS_ERROR: 
-      return {...state, loading: false, error: action.error}
+      return {...state, error: action.error}
     case FETCH_NEXT_POSTS_SUCCESS: 
-      return {...state, loading: false, posts: state.posts.concat(action.posts), nextPostsPage: action.nextPostsPage}
+      return {...state, posts: state.posts.concat(action.posts), nextPostsPage: action.nextPostsPage}
     default:
       return state
   }

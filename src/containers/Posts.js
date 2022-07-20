@@ -1,9 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import PostsWrapper from "../components/PostsWrapper/PostsWrapper";
 import {useDispatch, useSelector} from 'react-redux'
 import { fetchNextPosts, fetchPosts } from '../store/postsActions'
 import { useEffect } from "react";
-import { baseURL } from "../constans";
 
 export default function Posts() {
   
@@ -19,12 +18,14 @@ export default function Posts() {
   }
 
   return (
-    <View style={styles.container}>
-      <PostsWrapper 
-      posts={posts}
-      uploadingNewPosts={uploadingNewPosts}
-      />
-    </View>
+    <>
+      <View style={styles.container}>
+        <PostsWrapper 
+        posts={posts}
+        uploadingNewPosts={uploadingNewPosts}
+        />
+      </View> 
+    </>
   );
 }
 
