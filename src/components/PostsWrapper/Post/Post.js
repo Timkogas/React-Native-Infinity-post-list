@@ -1,14 +1,11 @@
 import { Image, Text, View, StyleSheet } from "react-native";
 
-const placeImage = {
-  uri: 'https://s.inyourpocket.com/gallery/22671.jpg'
-}
 
-export default function Post() {
+export default function Post({img, text}) {
   return (
     <View style={styles.post}>
-      <Image source={placeImage} style={styles.img}/>
-      <Text style={styles.text}>asdasd dasdasda dasd asd assdas dasd asd asd asdas dasdas dasd asd asdas das </Text>
+      <Image source={{uri: img}} style={styles.img}/>
+      <Text style={styles.text}>{text}</Text>
     </View>
   );
 }

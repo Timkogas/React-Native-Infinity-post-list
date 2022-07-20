@@ -4,10 +4,15 @@ import Post from "./Post/Post";
 export default function PostsWrapper({posts}) {
   return (
     <View style={styles.postsWrapper}>
-      <Post/>
-      <Post/>
-      <Post/>
-      <Post/>
+      {posts.map((post)=>{
+        return (
+          <Post
+            key={post.data.id}
+            img={post.data.thumbnail}
+            text={post.data.title}
+          />
+        )
+      })}
     </View>
   );
 }

@@ -18,7 +18,7 @@ export const fetchPosts = () => {
     dispatch(fetchPostsRequest())
     try {
       const response = await axios.get()
-      dispatch(fetchPostsSuccess(response.data))
+      dispatch(fetchPostsSuccess(response.data.data.children))
     } catch(e) {
       dispatch(fetchPostsError(e))
     }

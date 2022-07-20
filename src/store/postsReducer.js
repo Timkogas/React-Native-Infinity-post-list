@@ -15,7 +15,7 @@ const postsReducer = (state = initialState, action) => {
     case FETCH_POSTS_SUCCESS: 
       return {...state, loading: false, posts: action.posts}
     case FETCH_POSTS_ERROR: 
-      return {...state, loading: false, posts: action.error}
+      return {...state, loading: false, error: action.error}
     default:
       return state
   }
