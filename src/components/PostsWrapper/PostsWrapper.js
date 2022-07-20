@@ -1,7 +1,7 @@
 import { FlatList, View, StyleSheet} from "react-native";
 import Post from "./Post/Post";
 
-export default function PostsWrapper({posts}) {
+export default function PostsWrapper({posts, uploadingNewPosts}) {
   return (
 
     <FlatList 
@@ -13,9 +13,9 @@ export default function PostsWrapper({posts}) {
         img={item.data.thumbnail ? item.data.url_overridden_by_dest : item.data.thumbnail}
         text={item.data.title}
       />
-    
     }
-      keyExtractor={post => post.id}
+    onEndReachedThreshold={0.5}
+    onEndReached={()=>{uploadingNewPosts()}}
     />
   );
 }
